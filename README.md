@@ -1,5 +1,7 @@
 # aoc2023
 
+aiming for speed, my code is a mess. might rewrite later idk
+
 ```
       -------Part 1--------   -------Part 2--------
 Day       Time  Rank  Score       Time  Rank  Score
