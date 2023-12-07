@@ -18,5 +18,5 @@ Day       Time   Rank  Score       Time   Rank  Score
 3. Didn't handle end of line case correctly (was only processing numbers after seeing a non-numeric symbol) and then overcomplicated things worrying about `+` and `-` signs. Once figured out, decently fast part 2
 4. Fast (but not fast enough) part 1 , but then used array index instead of Game ID in initial part 2 implementation, which was wrong and delayed me a bit
 5. Tedious problem. Incredible innefficent part 1, so did a complete rewrite for part 2
-6. Late start due to life - actual time taken around 3:30 for part 1, 4:30 for part 2 (but I got some thinking time)
-7. TIL that Python3 deprecates `cmp` and also that `key` is faster and cleaner. Part 1 was straightforward but I was a bit slow. I tried to be too smart and count unique cards to figure out rankings quickly, but that got too messy for part 2, so I stopped, had breakfast, and rewrote it a little more cleanly
+6. Late start due to life - actual time taken around 3:30 for part 1, 4:30 for part 2 (but I got some thinking time). Classic easy puzzle, part 1 solution Just Worked for part 2
+7. TIL that Python3 deprecates `cmp` and also that `key` is faster and cleaner. Part 1 was straightforward but I was a bit slow. I tried to be too smart and count unique cards to figure out rankings quickly, but that got too messy for part 2, so I stopped, had breakfast, and rewrote it a little more cleanlygit 
