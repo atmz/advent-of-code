@@ -55,20 +55,22 @@ def is_inside( point, path, lines):
     outside = True
     vertical_pipe_start = ''
     for y,c in enumerate(track_from_top):
-        if c == 'S':
-            c = calculate_s( (y,x), path)
-        if c == '-'  and (y,x) in path:
-            outside = not outside
-        if c in ['7', 'F'] and (y,x) in path:
-            vertical_pipe_start = c
-        if c == 'L' and (y,x) in path:
-            if vertical_pipe_start == '7':
+        if (y,x) in path:
+            if c == 'S':
+                c = calculate_s( (y,x), path)
+            
+            if c == '-':
                 outside = not outside
-            vertical_pipe_start = ''
-        if c == 'J' and (y,x) in path:
-            if vertical_pipe_start == 'F':
-                outside = not outside
-            vertical_pipe_start = ''
+            elif c in ['7', 'F']:
+                vertical_pipe_start = c
+            elif c == 'L':
+                if vertical_pipe_start == '7':
+                    outside = not outside
+                vertical_pipe_start = ''
+            elif c == 'J':
+                if vertical_pipe_start == 'F':
+                    outside = not outside
+                vertical_pipe_start = ''
     return not outside
 
 
