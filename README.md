@@ -5,6 +5,8 @@ aiming for speed, my code is a mess. might rewrite later idk
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 11   01:57:45  10019      0   02:09:18   8986      0
+ 10   00:42:49   2556      0          -      -      -
   9   00:15:16   2709      0   00:16:48   1887      0
   8   00:07:04   1060      0   02:03:22   8950      0
   7   00:21:09   1094      0   01:42:22   7213      0
@@ -24,3 +26,5 @@ Day       Time   Rank  Score       Time   Rank  Score
 7. TIL that Python3 deprecates `cmp` and also that `key` is faster and cleaner. Part 1 was straightforward but I was a bit slow. I tried to be too smart and count unique cards to figure out rankings quickly, but that got too messy for part 2, so I stopped, had breakfast, and rewrote it a little more cleanlygit 
 8. Fun, classic problem. Good part 1 (generally worked, I was just typing a bit slow), and then a part 2 that's intractable without some Math, which I did after breakfast/dropping the kids off
 9. Fun again. Decent part 1 but didn't work first time(I incorrectly tested sum(sequence)==0 to see if they were all 0, which doesn't work), and then part 2 was trivial
+10. Took the wrong approach (didn't use recursion!) and got stuck for a bit, but ended with a clean recursive solution for part 1. Part 2: TODO, very tedious
+11. Started late on this one because I was out late last night. Fun problem, initial solution was clean but needed a 'sparse' method for Part 2, which I did by tracking rows that needed expanding and taking them into account with the distance function
