@@ -5,8 +5,9 @@ aiming for speed, my code is a mess. might rewrite later idk
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 12   01:36:46   6016      0   04:45:49   4521      0
  11   01:57:45  10019      0   02:09:18   8986      0
- 10   00:42:49   2556      0          -      -      -
+ 10   00:42:49   2556      0       >24h  28843      0
   9   00:15:16   2709      0   00:16:48   1887      0
   8   00:07:04   1060      0   02:03:22   8950      0
   7   00:21:09   1094      0   01:42:22   7213      0
@@ -28,3 +29,4 @@ Day       Time   Rank  Score       Time   Rank  Score
 9. Fun again. Decent part 1 but didn't work first time(I incorrectly tested sum(sequence)==0 to see if they were all 0, which doesn't work), and then part 2 was trivial
 10. Took the wrong approach (didn't use recursion!) and got stuck for a bit, but ended with a clean recursive solution for part 1. Part 2: was stuck on this for a while trying and failing at counting crossings. Attacked it afresh today and figured out a clean solution with clever counting!
 11. Started late on this one because I was out late last night. Fun problem, initial solution was clean but needed a 'sparse' method for Part 2, which I did by tracking rows that needed expanding and taking them into account with the distance function
+12. Almost got part 1 it before breakfast but had a bug. I thought I had a relatively efficient solution, but part 2 proved me wrong and I reqrote using a cache and generally avoiding 
