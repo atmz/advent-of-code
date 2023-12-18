@@ -5,6 +5,12 @@ aiming for speed, my code is a mess. might rewrite later idk
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 18   03:53:35   7931      0          -      -      -
+ 17   15:13:29  12295      0   16:41:39  11982      0
+ 16   03:49:07   8446      0   03:56:58   7801      0
+ 15   02:57:42  13196      0   03:13:28  10135      0
+ 14   02:07:11   9436      0   02:22:43   5515      0
+ 13       >24h  28656      0       >24h  24460      0
  12   01:36:46   6016      0   04:45:49   4521      0
  11   01:57:45  10019      0   02:09:18   8986      0
  10   00:42:49   2556      0       >24h  28843      0
@@ -32,3 +38,6 @@ Day       Time   Rank  Score       Time   Rank  Score
 12. Almost got part 1 it before breakfast but had a bug. I thought I had a relatively efficient solution, but part 2 proved me wrong and I rewrote using a cache and generally avoiding string traversals and got something that runs in under 5 seconds
 13. Did this a day late, once again sleeping on it helped resolve bugs. Vewry inneffient solutiobn, did not expect part 2 to work, but it was fine (well under a second), probably because it was lots of small grids rather than one big one.
 14. Used sorting of substrings to do the falling rocks, cute and worked surprisingly well. For Part 2, just looked at the output and figured it out
+15. Pretty straightforward; no specific optmization needed
+16. Expected part 2 to be slow, but brute-force 'try every possible entry point' was good enough
+17. Big Sunday problem, pain in the butt to get working quickly (especially part 2) and had very buggy code, but eventually stuck a priority queue in there and it worked very quickly
