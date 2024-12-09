@@ -1,2 +1,5 @@
 *input.txt
 ignore*
+*DS_store
+*.pyc
+__*
