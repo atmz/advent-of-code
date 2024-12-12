@@ -4,6 +4,8 @@ Another year, another AOC. I still am using Python and aiming for speed over cle
 ```
       --------Part 1---------   --------Part 2---------
 Day       Time    Rank  Score       Time    Rank  Score
+ 11   00:04:29     469      0   01:38:18    6888      0
+ 10   00:53:16    7328      0   00:54:11    6552      0
   9   00:35:35    4519      0   01:38:44    4813      0
   8   01:21:12    8540      0   01:26:29    7487      0
   7   01:05:25    8674      0   01:13:01    7612      0
@@ -14,6 +16,8 @@ Day       Time    Rank  Score       Time    Rank  Score
   2   01:36:14   18165      0   01:40:37   12007      0
   1       >24h  110383      0       >24h  104055      0
 ```
+11. Sub 5 minute part 1, part 2 needed a more efficient implementation and I needed to help with kids. Did part 2 using a defaultdict(int) to count rocks, and that ran fast enough
+10. Pretty simple graph traversal, did it recursively and part 2 is very similar to part 1 (I actually implemented part 2 by accident first)
 9. Easy Monday puzzle? Part 2 bneeded a rewrite from my very simple Part 1, but both worked pretty easily. Started at 7:11, did aprt 1, took kids to school, then did part 2
 8. Started at 8:16ish, but a nice puzzle and got to a pretty quick solution that worked first time
 7. Started at 7:43, fun problem -- fairly naive solution worked, but only after replacing `set(itertools.permutations(` with `itertools.product([<>], repeat=X)` for the operator permutation logic. Went back later and figured out a massive optimization - do things end-first, and then because everything is integer your options become way more limited
