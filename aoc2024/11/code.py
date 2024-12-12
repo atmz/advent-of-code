@@ -1,27 +1,5 @@
 import sys; sys.dont_write_bytecode = True; from util import *
 
-#part_1
-def iterate(rocks):
-    new_rocks = []
-    for rock in rocks:
-        if rock == 0:
-            new_rocks.append(1)
-        elif len(str(rock)) % 2 == 0:
-            new_rocks.append(int(str(rock)[:len(str(rock))//2]))
-            new_rocks.append(int(str(rock)[len(str(rock))//2:]))
-        else:
-            new_rocks.append(rock*2024)
-    return new_rocks
-def part_1(input):
-    lines = input.splitlines()
-    rocks = [int(i) for i in lines[0].split()]
-
-    for i in range(1,26):
-        rocks = iterate(rocks)
-        print(i, len(rocks))
-    return  # RETURNED VALUE DOESN'T DO ANYTHING, PRINT THINGS INSTEAD
-
-
 class RockLine:
     def __init__(self, rocks):
         self.rocks = defaultdict(int)
@@ -54,6 +32,28 @@ def do_case(inp: str, sample=False):
     lines = inp.splitlines()
     rl = RockLine([int(i) for i in lines[0].split()])
     rl.calculate(75)
+    return  # RETURNED VALUE DOESN'T DO ANYTHING, PRINT THINGS INSTEAD
+
+
+#part_1 - same as part 2 but slow
+def iterate(rocks):
+    new_rocks = []
+    for rock in rocks:
+        if rock == 0:
+            new_rocks.append(1)
+        elif len(str(rock)) % 2 == 0:
+            new_rocks.append(int(str(rock)[:len(str(rock))//2]))
+            new_rocks.append(int(str(rock)[len(str(rock))//2:]))
+        else:
+            new_rocks.append(rock*2024)
+    return new_rocks
+def part_1(input):
+    lines = input.splitlines()
+    rocks = [int(i) for i in lines[0].split()]
+
+    for i in range(1,26):
+        rocks = iterate(rocks)
+        print(i, len(rocks))
     return  # RETURNED VALUE DOESN'T DO ANYTHING, PRINT THINGS INSTEAD
 
 
