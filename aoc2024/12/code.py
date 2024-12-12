@@ -25,39 +25,30 @@ def calculate_distinct_boundaries(set_boundaries):
     return score
 
 
-def reigion_from_2(x, y, grid, region=None, set_counted_boundaries=None):
+def reigion_from_2(x, y, grid, region=None, boundaries=None):
     value = grid[y][x]
     # score = set()
     if region is None:
         # Tuple of set of points, perimiter length
-        region=(set(), 0)
-    if set_counted_boundaries is None:
-        set_counted_boundaries = set()
-    region[0].add((x,y))
+        region=set()
+    if boundaries is None:
+        boundaries = set()
+    region.add((x,y))
 
     for dir in [(1, 0),(0, 1), (-1, 0), (0, -1)]:
         dx, dy = dir
         if 0 <= x+dx < len(grid[0]) and 0 <= y+dy < len(grid):
-            candidate_point = (x+dx, y+dy)
-            if candidate_point not in region[0]:
+            candidate_point = (x+dx, y+ dy)
+            if candidate_point not in region:
                 if grid[y+dy][x+dx] == value:
-                    a,b = reigion_from_2(x+dx, y+dy, grid, region, set_counted_boundaries)
-                    # print(x,y,a,b, grid[y+dy][x+dx], "recursive call")
-                    region= (region[0].union(a), b)
+                    a,b = reigion_from_2(x+dx, y+dy, grid, region, boundaries)
+                    region, boundaries = region.union(a), boundaries.union(b)
                 else:
-                    if should_count_boundary(x,y,dir,set_counted_boundaries):
-                        # print("counted boundary", x,y, dir)
-                        region = (region[0], region[1]+1)
-                    set_counted_boundaries.add((x,y,dir))
-                    
+                    boundaries.add((x,y,dir))
         else:
-            if should_count_boundary(x,y,dir,set_counted_boundaries):
-                region = (region[0], region[1]+1)
-                # print("counted boundary", x,y, dir)
-            set_counted_boundaries.add((x,y,dir))
+            boundaries.add((x,y,dir))
     # print(set_counted_boundaries,region)
-    region = (region[0], calculate_distinct_boundaries(set_counted_boundaries))
-    return region
+    return region, boundaries
 
 
 def reigion_from(x, y, grid, region=None):
@@ -105,8 +96,8 @@ def do_case(inp: str, sample=False):
                 all_visited = all_visited.union(new_region[0])
     score=0
     for region in regions:
-        print(len(region[0]), region[1], len(region[0]) * region[1])
-        score += len(region[0]) * region[1]
+        # print(len(region[0]), region[1], len(region[0]) * region[1])
+        score += len(region[0]) * calculate_distinct_boundaries(region[1])
     print(score)
     return  # RETURNED VALUE DOESN'T DO ANYTHING, PRINT THINGS INSTEAD
 
@@ -123,32 +114,8 @@ VVIVCCJJEE
 VVIIICJJEE
 MIIIIIJJEE
 MIIISIJEEE
-MMMISSJEEE""",
-    r"""AAAAAA
-AAABBA
-AAABBA
-ABBAAA
-ABBAAA
-AAAAAA
-
-
-""",r"""EEEEE
-EXXXX
-EEEEE
-EXXXX
-EEEEE
-
-""",r"""AAAA
-BBCD
-BBCC
-EEEC
-
-
-""",r"""
-OOOOO
-OXOXO
-OOOOO
-""",r"""
+MMMISSJEEE"""
+,r"""
 
 """,r"""
 
