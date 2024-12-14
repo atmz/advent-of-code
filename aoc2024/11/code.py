@@ -25,13 +25,13 @@ class RockLine:
     def calculate(self,i):
         for x in range(1,i+1):
             self.iterate()
-            print(i, self.count())
+            print(x, self.count())
 
 def do_case(inp: str, sample=False):
     def sprint(*a, **k): sample and print(*a, **k)
     lines = inp.splitlines()
     rl = RockLine([int(i) for i in lines[0].split()])
-    rl.calculate(75)
+    rl.calculate(1000000)
     return  # RETURNED VALUE DOESN'T DO ANYTHING, PRINT THINGS INSTEAD
 
 

@@ -4,6 +4,9 @@ Another year, another AOC. I still am using Python and aiming for speed over cle
 ```
       --------Part 1---------   --------Part 2---------
 Day       Time    Rank  Score       Time    Rank  Score
+ 14   03:11:09   10535      0   03:25:19    7955      0
+ 13   00:49:02    5189      0   07:56:04   15517      0
+ 12   01:31:13    8192      0   02:53:13    5722      0
  11   00:04:29     469      0   01:38:18    6888      0
  10   00:53:16    7328      0   00:54:11    6552      0
   9   00:35:35    4519      0   01:38:44    4813      0
@@ -16,6 +19,9 @@ Day       Time    Rank  Score       Time    Rank  Score
   2   01:36:14   18165      0   01:40:37   12007      0
   1       >24h  110383      0       >24h  104055      0
 ```
+14. Part 1 was pretty easy, you can figure out where anything will be in n steps in O(1). Unfortunately, I had an off-by-one error that worked on the example, so I wasted a ton of time here. Part 2 was a surprise, but my christmas-tree-detecting logic worked fine enough, and edned up spending <15 minutes on part 2
+13. Naive solution for part 1 worked fine, part 2 I tried various bad optimzations before giving up and solving the equation with sympy. In retrospect could have done this geometrically I think?
+12. Getting into the harder content! Re-used skeleton of part 2, started at 8ish so actually did part 1 pretty quickly. Perimiter calculations actually can be done neatly in the same recursive algorithm. In Part 2, it's trickier -- I tried to be clever but we need to do the full traversal before we can correctly count sides. So, ended up saving all the edges, then sorting (important!) and counting only edges that haven't had a neighbor seen yet
 11. Sub 5 minute part 1, part 2 needed a more efficient implementation and I needed to help with kids. Did part 2 using a defaultdict(int) to count rocks, and that ran fast enough
 10. Pretty simple graph traversal, did it recursively and part 2 is very similar to part 1 (I actually implemented part 2 by accident first)
 9. Easy Monday puzzle? Part 2 bneeded a rewrite from my very simple Part 1, but both worked pretty easily. Started at 7:11, did aprt 1, took kids to school, then did part 2

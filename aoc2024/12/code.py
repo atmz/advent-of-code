@@ -17,6 +17,7 @@ def should_count_boundary(x,y,dir,set_counted_boundaries):
 def calculate_distinct_boundaries(set_boundaries):
     counted_boundaries = set()
     score=0
+    # sorting is essential here, otherwise should_count_boundary will be wrong
     boundaries_in_order = sorted(list(set_boundaries))
     for boundary in boundaries_in_order:
         if should_count_boundary(boundary[0], boundary[1], boundary[2], counted_boundaries):
