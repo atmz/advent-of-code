@@ -4,6 +4,9 @@ Another year, another AOC. I still am using Python and aiming for speed over cle
 ```
       --------Part 1---------   --------Part 2---------
 Day       Time    Rank  Score       Time    Rank  Score
+ 17   01:26:22    5780      0   03:26:45    2963      0
+ 16   02:05:07    5878      0   10:22:59   10500      0
+ 15   01:02:39    5071      0   08:31:12   10213      0
  14   03:11:09   10535      0   03:25:19    7955      0
  13   00:49:02    5189      0   07:56:04   15517      0
  12   01:31:13    8192      0   02:53:13    5722      0
@@ -19,6 +22,10 @@ Day       Time    Rank  Score       Time    Rank  Score
   2   01:36:14   18165      0   01:40:37   12007      0
   1       >24h  110383      0       >24h  104055      0
 ```
+17. Finally, the interpreter! Part 1 pretty straightforward, except I used OR instead of XOR and that worked for the example and took a little time to figure out.
+Part 2 probably has a clever solution, but I observed partial matches vs register A mod 2^X and found a pattern that let me reduce runtime by a factor of 2^29. Code still took 8 seconds!
+16. Graph best path; did part 1 pretty quickly, but kept not quite getting it right for part 2 for a while. Probably should have just looked up Djikstra's
+15. Part 1 was easy except I misread and thought we pushed until we hit a wall. "Straightforward" but tedious part 2.
 14. Part 1 was pretty easy, you can figure out where anything will be in n steps in O(1). Unfortunately, I had an off-by-one error that worked on the example, so I wasted a ton of time here. Part 2 was a surprise, but my christmas-tree-detecting logic worked fine enough, and edned up spending <15 minutes on part 2
 13. Naive solution for part 1 worked fine, part 2 I tried various bad optimzations before giving up and solving the equation with sympy. In retrospect could have done this geometrically I think?
 12. Getting into the harder content! Re-used skeleton of part 2, started at 8ish so actually did part 1 pretty quickly. Perimiter calculations actually can be done neatly in the same recursive algorithm. In Part 2, it's trickier -- I tried to be clever but we need to do the full traversal before we can correctly count sides. So, ended up saving all the edges, then sorting (important!) and counting only edges that haven't had a neighbor seen yet
